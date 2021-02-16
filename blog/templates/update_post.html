@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     Update Post
+{% endblock %}
+
+{% block content %}
+
+<h1>Update Post</h1>
+
+     <div class="form-group">
+          <form method="POST" action="">
+               {% csrf_token %}
+
+               {{ form.as_p }}
+               <button class="btn btn-outline-success">Update</button>
+               <a class="btn btn-outline-danger" href="{% url 'home'%}">Cancel</a>
+          </form>
+     </div>
+
+{% endblock %}
