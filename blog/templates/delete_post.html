@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     Delete {{post.title}}      
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+     <div class="card-header">
+          Delete {{post.title}} ? 
+     </div>
+     <div class="card-body">
+          <form method="POST">
+               {% csrf_token %}
+
+               <button class="btn btn-outline-danger" href="{% url 'delete_post' post.pk %}">Delete Post</button>
+
+          </form>
+     </div>
+   </div>
+
+{% endblock %}
+

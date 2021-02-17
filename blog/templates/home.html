@@ -8,12 +8,11 @@
           <div class="card mt-4">
                <div class="card-body">
                     <h3>{{post.title}}</h3>
+                    {{post.date}}
                     <p>{{post.author.first_name}} {{post.author.last_name}}</p>
-
                     <a class="btn btn-outline-success" href="{% url 'post_detail' post.pk %}">View Post</a>
-                    <a class="btn btn-outline-warning" href="{% url 'update_post' post.pk %}">Edit Post</a>
                </div>
           </div>
      {% endfor %}
-
+          
 {% endblock %}

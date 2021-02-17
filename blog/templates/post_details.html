@@ -8,16 +8,16 @@
 
 <div class="card">
      <div class="card-header">
-          By: {{post.author.first_name}} {{post.author.last_name}}
+          By: {{post.author.first_name}} {{post.author.last_name}} , {{post.date}}
      </div>
      <div class="card-body">
        <h3 class="card-title">{{post.title}}</h3>
        <p class="card-text">{{post.body}}</p>
        
-       <a class="btn btn-outline-success" href="{% url 'home' %}">Home</a>
        <a class="btn btn-outline-warning" href="{% url 'update_post' post.pk %}">Edit Post</a>
+       <a class="btn btn-outline-danger" href="{% url 'delete_post' post.pk %}">Delete Post</a>
      </div>
-   </div>
+</div>
 
 {% endblock %}
 

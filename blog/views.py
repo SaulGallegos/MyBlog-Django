@@ -1,5 +1,6 @@
+from django.urls.base import reverse_lazy
 from .models import Post
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .forms import PostForm, EditPostForm
 
 ##############
@@ -33,3 +34,12 @@ class UpdatePostView(UpdateView):
      model = Post
      form_class = EditPostForm
      template_name = 'update_post.html'
+
+
+###############
+# Delete Post #
+###############
+class DeletePostView(DeleteView):
+     model = Post
+     template_name = 'delete_post.html'
+     success_url = reverse_lazy('home')
